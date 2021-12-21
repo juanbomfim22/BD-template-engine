@@ -6,4 +6,4 @@ npm i ou yarn install
 
 Para rodar:
 
-npm vite ou yarn vite
+npm run dev ou yarn vite
