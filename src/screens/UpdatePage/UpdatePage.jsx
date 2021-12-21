@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useLocation, useParams } from 'react-router-dom';
 import Header from '../../components/Header/Header';
 import { api } from '../../services/api';
+
 import styles from './styles.module.scss'
 
 const initialState = {
@@ -31,6 +32,7 @@ function UpdatePage(props) {
     let { id } = useParams()
 
     const [values, setValues] = useState({})
+
 
     function handleInputChange(event) {
         const target = event.target;
@@ -85,18 +87,19 @@ function UpdatePage(props) {
                     <label > Valor de venda (R$)
                         <input name="sales_avg" defaultValue={price} type="number" min={1} max={1000} step={0.1} onChange={handleInputChange} />
 
+
                     </label>
                     <label>
                         Descrição
                         <textarea onChange={handleInputChange} value={values.description}
                             name="description" id="message" cols={30} rows={10} maxLength={240}
+
                             placeholder="Descrição" />
                     </label>
                     <button type="submit">Enviar</button>
                 </form>
 
                 <img src={image} style={{}} width={200} height={"100%"} />
-
             </div>
         </>
     )

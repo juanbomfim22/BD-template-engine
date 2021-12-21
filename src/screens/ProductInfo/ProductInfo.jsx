@@ -10,6 +10,7 @@ import styles from './styles.module.scss'
 import { IoMdArrowRoundBack, IoMdArrowRoundForward } from 'react-icons/io';
 import { api } from '../../services/api'
 
+
 const baseURL = "https://bd-final-backend.herokuapp.com"
 const products = [
     {
@@ -256,6 +257,7 @@ const products = [
 // const product = products[0]
 
 
+
 function ProductInfo() {
     let navigate = useNavigate()
     let { id } = useParams()
@@ -287,6 +289,7 @@ function ProductInfo() {
         getProduct()
     }, [])
 
+
     return (
         <>
             <Header />
@@ -309,11 +312,13 @@ function ProductInfo() {
                     <p>Quantidade:
                         <span className="bold">
                             {/* {product.rating.count} */}
+
                         </span>
                     </p>
                     <p>Avaliação:
                         <span className="bold">
                             {/* {product.rating.rate} */}
+
                         </span>
                     </p>
                     <p>Valor médio de venda:

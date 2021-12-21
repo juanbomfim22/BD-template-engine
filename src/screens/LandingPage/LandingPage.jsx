@@ -8,7 +8,6 @@ import styles from './styles.module.scss'
 import { useNavigate, useParams } from 'react-router-dom'
 
 import {FaPlusCircle} from 'react-icons/fa'
-
 import { api } from '../../services/api'
 
 
@@ -46,6 +45,7 @@ function LandingPage() {
 
     const lower = text => text !== null ? text.toLocaleLowerCase() : '';
 
+
     return (
         <>
             <Header />
@@ -59,6 +59,7 @@ function LandingPage() {
                     <>
                         {
                             allProducts.map((product, i) =>
+
                                 
                              ( lower(product.title).includes(text) &&
                                     (category === "Todos" || lower(category).includes(lower(product.category))))

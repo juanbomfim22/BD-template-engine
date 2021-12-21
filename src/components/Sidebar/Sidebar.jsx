@@ -33,13 +33,13 @@ function Sidebar({ onType, onSelect }) {
                 onInput={filterProducts} />
 
             <ol>
-                {
-                    
+                {                    
                     categories.map((category, id) =>
                         <li style={{color: selectedItem === category.name ? "blue" : "rgb(0,0,0,.8)"}}
                             key={id}
                             onClick={selectOption}>
                             {category.name}
+
                         </li>)
                 }
             </ol>

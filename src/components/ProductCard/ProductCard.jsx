@@ -11,6 +11,7 @@ function ProductCard(props) {
     id = id || ''
     category = category || ''
     image = image || ''
+
     const navigate = useNavigate();
     const format = text => text.length > 50 ? text.slice(0, 50).concat("...") : text
 
@@ -32,6 +33,7 @@ function ProductCard(props) {
                     style={{ padding: "5px" }}
                     onClick={remove} /> </div> : null}
             <div className={styles.details} onClick={handleClick}>
+
                 <div className={styles.pseudo_image}>
                     <img src={image} />
                 </div>
@@ -54,6 +56,7 @@ function ProductCard(props) {
             {isProduct ? <div className={styles.crud}>
                 <span onClick={e => navigate(`/update/${id}`, { state: props })}>Atualizar</span>
             </div> : null }
+
         </div>
     )
 }

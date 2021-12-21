@@ -1,19 +1,22 @@
 {
-  "name": "bd-parte1",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "awesome-store",
+  "version": "0.0.0",
   "scripts": {
-    "start": "node index.js",
-    "devstart": "nodemon index.js"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   },
-  "author": "",
-  "license": "ISC",
   "dependencies": {
-    "ejs": "^3.1.6",
-    "express": "^4.17.1"
+    "axios": "^0.24.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-icons": "^4.3.1",
+    "react-router-dom": "^6.1.1",
+    "sass": "^1.45.0"
   },
   "devDependencies": {
-    "nodemon": "^2.0.13"
+    "@vitejs/plugin-react": "^1.0.7",
+    "vite": "^2.6.14",
+    "vite-plugin-inspect": "^0.3.11"
   }
 }
