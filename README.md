@@ -20,9 +20,9 @@ Para rodar a aplicação, escolha a **__branch__**:
 
 Para instalar as dependências, independentemente da branch escolhida:
 
-npm i ou yarn install
+`npm i` ou `yarn install`
 
 Para rodar:
 
-npm run dev ou yarn vite
+`npm run dev` ou `yarn vite`
 
