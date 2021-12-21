@@ -18,7 +18,7 @@ Para rodar a aplicação, escolha a **__branch__**:
 
 ## Instalação
 
-Para instalar as dependências:
+Para instalar as dependências, independentemente da branch escolhida:
 
 npm i ou yarn install
 
