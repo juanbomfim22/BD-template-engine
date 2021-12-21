@@ -1,39 +1,23 @@
-import React, { useRef, useState } from 'react'
+import React, { useEffect, useState } from 'react'
+import { api } from '../../services/api'
 import styles from './styles.module.scss'
 
-const categories = [
-    "Todos",
-    "men's clothing",
-    "Acessórios para Veículos",
-    "Agro",
-    "Alimentos e Bebidas",
-    "Animais",
-    "Antiguidades e Coleções",
-    "Arte, Papelaria e Armarinho",
-    "Bebês",
-    "Beleza e Cuidado Pessoal",
-    "Brinquedos e Hobbies",
-    "Calçados, Roupas e Bolsas",
-    "Câmeras e Acessórios",
-    "Casa, Móveis e Decoração",
-    "Celulares e Telefones",
-    "Construção",
-    "Eletrodomésticos",
-    "Eletrônicos, Áudio e Vídeo",
-    "Esportes e Fitness",
-    "Ferramentas",
-    "Festas e Lembrancinhas",
-    "Games",
-    "Indústria e Comércio",
-    "Informática",
-    "Instrumentos Musicais",
-    "Joias e Relógios",
-    "Livros, Revistas e Comics",
-    "Mais Categorias",
-    "Saúde"
-]
+
 
 function Sidebar({ onType, onSelect }) {
+
+    const [categories, setCategories] = useState([])
+
+
+    useEffect(() => {
+        async function getCategories() {
+            const { data } = await api.get("/categories")
+            const todos = {name: "Todos"}
+            setCategories([todos, ...data])
+        }
+        getCategories()
+    }, [])
+
     const [selectedItem, setSelectedItem] = useState("Todos");
     function filterProducts(e){
         onType(e.target.value)
@@ -49,12 +33,13 @@ function Sidebar({ onType, onSelect }) {
                 onInput={filterProducts} />
 
             <ol>
-                {
+                {                    
                     categories.map((category, id) =>
-                        <li style={{color: selectedItem === category ? "blue" : "rgb(0,0,0,.8)"}}
+                        <li style={{color: selectedItem === category.name ? "blue" : "rgb(0,0,0,.8)"}}
                             key={id}
                             onClick={selectOption}>
-                            {category}
+                            {category.name}
+
                         </li>)
                 }
             </ol>

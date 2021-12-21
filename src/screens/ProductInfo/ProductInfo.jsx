@@ -8,6 +8,8 @@ import styles from './styles.module.scss'
 
 
 import { IoMdArrowRoundBack, IoMdArrowRoundForward } from 'react-icons/io';
+import { api } from '../../services/api'
+
 
 const baseURL = "https://bd-final-backend.herokuapp.com"
 const products = [
@@ -252,25 +254,42 @@ const products = [
         }
     }
 ]
-const product = products[0]
+// const product = products[0]
+
 
 
 function ProductInfo() {
     let navigate = useNavigate()
     let { id } = useParams()
     id = parseInt(id)
-    const [page, setPage] = useState({})
-   
-    useEffect(() => {
-        async function getProduct(id) {
-            // const { data } = await axios.get(`${baseURL}/products/${id}`)
-            // setPage(data)
-        }
-        getProduct(id)
-        return () => {
 
+    const [product, setProduct] = useState({})
+
+
+    useEffect(() => {
+        async function getProduct() {
+            let { data } = await api.get(`/products/${id}`)
+            console.log(data)
+            // converter obj em formato do back para front
+            data = {
+                    ...data,
+                    title: data.name,
+                    price: data.sales_avg,
+                    rating: {
+                        rate: 0,
+                        count: data.amount
+                    },
+                    category: data.categories.join(", "),
+                    image: ""
+                }
+            
+
+            setProduct(data)
         }
+        getProduct()
     }, [])
+
+
     return (
         <>
             <Header />
@@ -292,12 +311,14 @@ function ProductInfo() {
                     </p>
                     <p>Quantidade:
                         <span className="bold">
-                            {product.rating.count}
+                            {/* {product.rating.count} */}
+
                         </span>
                     </p>
                     <p>Avaliação:
                         <span className="bold">
-                            {product.rating.rate}
+                            {/* {product.rating.rate} */}
+
                         </span>
                     </p>
                     <p>Valor médio de venda:
