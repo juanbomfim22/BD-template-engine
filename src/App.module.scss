@@ -1,0 +1,33 @@
+
+
+.products {
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    width: 90%;
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5rem;
+    font-family: "Kumbh Sans", sans-serif;
+    a {
+        color: inherit;
+        text-decoration: none;
+    }
+    .logo {
+        margin: 0 auto;
+    }
+}
+
+.aside {
+    display: flex;
+    section {
+        flex: 5;
+        justify-content: start;
+    }
+}
