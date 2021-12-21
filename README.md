@@ -3,7 +3,7 @@
 Versão atualizada da loja com dados estáticos
 
 ## Branches
-PAra rodar a aplicação, escolha a **__branch__**:
+Para rodar a aplicação, escolha a **__branch__**:
 - `main`: dados estáticos
 
 ![image](https://user-images.githubusercontent.com/55420785/146968106-495032ee-51d4-4605-9354-6732641eb435.png)
